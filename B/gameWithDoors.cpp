@@ -8,30 +8,25 @@ int main()
     cin.tie(NULL);
     ll t;
     cin >> t;
-    for (ll i = 0; i < t; i++)
+    while (t--)
     {
-        ll ans = 0 ; 
-        ll a , b, c, d; 
+        int a,b,c,d;
         cin>>a>>b>>c>>d;
-        
-        pair<ll, ll> alice(a,b); 
-        pair<ll, ll >bob(c,d);
+        if(b<c) {
+            cout<<1<<"\n";
+            continue;
+        }
+        ll  l_common = max(a,c);
+        ll r_common = min(b,d);
+        ll ext_left = min(a,c);
+        ll ext_right = max(b,d);
+        ll sum = (r_common-l_common);
+        if(ext_left<l_common) sum++;
+        if (r_common<ext_right) sum++;
 
-        ll minm = min(a,c);
-        ll maxm = max(b,d);
-        
-        //making the door common between the range of both 
-        if(alice.first>bob.first) bob.first = alice.first;
-        else alice.first = bob.first;
+        cout<<sum<<"\n";
 
-        if(alice.second > bob.second) alice.second = bob.second;
-        else bob.second = alice.second;
- 
-       if(alice.first != minm)  ans++;
-       if(alice.second != maxm)  ans++;
-       if(maxm-minm ==0) {cout<<1 ; return 0;}
-       ans += (alice.second - alice.first);
-       cout<<ans<<endl;; 
+
     }
 
     return 0;
