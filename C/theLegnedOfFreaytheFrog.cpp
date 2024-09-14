@@ -14,46 +14,38 @@ int main()
         int steps = 0;
         ll a, b, k;
         cin >> a >> b >> k;
-        int diff_a = a;
-        int diff_b = b;
+
         int currSumA = 0;
         int currSumB = 0;
 
-        while (currSumA < diff_a || currSumB < diff_b)
+        while (currSumA < a || currSumB < b)
         {
             if (true)
             {
-                if (diff_a - currSumA >= k)
+                if (a - currSumA >= k)
                 {
                     currSumA += k;
                     steps++;
-                    
                 }
                 else
                 {
-                    currSumA += (diff_a - currSumA);
+                    currSumA += (a - currSumA);
                     steps++;
-                    
                 }
             }
             if (true)
             {
-                if (diff_b - currSumB >= k)
-            {
-                currSumB += k;
-                steps++;
-                
+                if (b - currSumB >= k)
+                {
+                    currSumB += k;
+                    steps++;
+                }
+                else
+                {
+                    currSumB += (b - currSumB);
+                    steps++;
+                }
             }
-            else
-            {
-                currSumB += (diff_b - currSumB);
-                steps++;
-               
-            }
-            }
-            
-
-            
         }
         cout << steps << endl;
     }
