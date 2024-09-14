@@ -20,8 +20,8 @@ int main()
 
         while (currSumA < a || currSumB < b)
         {
-            if (true)
-            {
+            
+            
                 if (a - currSumA >= k)
                 {
                     currSumA += k;
@@ -32,9 +32,9 @@ int main()
                     currSumA += (a - currSumA);
                     steps++;
                 }
-            }
-            if (true)
-            {
+            
+           
+            
                 if (b - currSumB >= k)
                 {
                     currSumB += k;
@@ -45,9 +45,10 @@ int main()
                     currSumB += (b - currSumB);
                     steps++;
                 }
-            }
+            
         }
-        cout << steps << endl;
+      if(a>b) cout<<steps-1<<"\n"; 
+       else cout << steps << endl;
     }
 
     return 0;
