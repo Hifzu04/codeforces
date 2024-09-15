@@ -11,45 +11,18 @@ int main()
 
     while (testcases--)
     {
-        int steps = 0;
+       // ll steps = 0;
         ll a, b, k;
         cin >> a >> b >> k;
-
-        int currSumA = 0;
-        int currSumB = 0;
-
-        while (currSumA < a || currSumB < b)
-        {
-            
-            
-                if (a - currSumA >= k)
-                {
-                    currSumA += k;
-                    steps++;
-                }
-                else
-                {
-                    currSumA += (a - currSumA);
-                    steps++;
-                }
-            
-           
-            
-                if (b - currSumB >= k)
-                {
-                    currSumB += k;
-                    steps++;
-                }
-                else
-                {
-                    currSumB += (b - currSumB);
-                    steps++;
-                }
-            
-        }
-      if(a>b) cout<<steps-1<<"\n"; 
-       else cout << steps << endl;
-    }
-
-    return 0;
+      if((a+k-1)/k > (b+k-1)/k){
+        ll steps = (a+k-1)/k;
+        cout<<(steps*2)-1<<"\n";
+      }
+      else{
+        cout<<2*((b+k-1)/k)<<"\n";
+      }
+    
+}
+return 0;
+ 
 }
