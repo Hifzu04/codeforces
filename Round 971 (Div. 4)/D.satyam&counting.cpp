@@ -13,11 +13,12 @@ int main()
         cin>>n ; 
         map<pair<ll,ll>,ll>m;
         vector<ll>cnt(2);
-        for(ll i = 0 ;  i<n ; i ++){
+        for(ll i = 0 ; i<n ; i ++){
             ll x , y ;
             cin>>x>>y;
             m[{x, y}]++;
-            cnt[y]++;    
+            cnt[y]++;
+               
         }
         for(auto &[i,j] : m){
             auto [x,y] = i;
