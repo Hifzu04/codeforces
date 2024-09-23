@@ -10,26 +10,13 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n, k;
+        ll n, k;
         cin >> n >> k;
-        if (n & 1)
-        {
-            if ((k - 1) & 1)
-                cout << "YES" << "\n";
-            else
-                cout << "NO" << "\n";
-        }
+        ll sum = (k * (2 * n + 1 - k)) / 2;
+        if (sum & 1)
+            cout << "NO" << "\n";
         else
-        {
-            if ((k - 1) & 1)
-            {
-                cout << "NO" << "\n";
-            }
-            else
-            {
-                cout << "YES" << "\n";
-            }
-        }
+            cout << "YES" << "\n";
     }
 
     return 0;
