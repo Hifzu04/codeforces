@@ -27,14 +27,14 @@ int main()
             if (i > 0)
             {
                 ll noOfElemet = arr[i] - arr[i - 1] - 1;
-                ll gap_segment = 0;
-                gap_segment = i * (n - i);
+                
+                ll gap_segment = i * (n - i);
 
                 mpp[gap_segment] += noOfElemet;
             }
         }
 
-        for (int i = 0; i < q; i++)
+        for (int i = 0; i <q; i++)
         {
             ll a;
             cin >> a;
