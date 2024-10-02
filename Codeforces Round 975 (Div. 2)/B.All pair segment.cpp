@@ -21,7 +21,8 @@ int main()
         
         for (int i = 0; i < n; i++)
         {
-            ll segment = ((arr[i] * i) + arr[i] * (n - i - 1));
+           //ll segment = (arr[i] * i) + (arr[i] * (n - i - 1));
+            ll segment = (i+1)*(n-i)-1;
             mpp[segment]++;
              
             if (i > 0)
