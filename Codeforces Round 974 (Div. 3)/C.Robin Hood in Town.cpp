@@ -20,20 +20,26 @@ int main()
             sum += vec[i];
         }
         sort(vec.begin(), vec.end());
-        ll mid_idx = n / 2 ;
-        ll half_avg = sum/(n*2);
-        if (vec[mid_idx] < half_avg)
-        {
-            cout << 0 << "\n";
+        ll mid_idx = n / 2;
+        ll half_avg = sum / (n * 2);
+        
+        //auto it =  lower_bound(vec.begin(), vec.end(), half_avg);
+        ///cout << *(it)<< endl;
+        if(vec.size()<3){
+            cout<<-1<<"\n";
         }
-        else
-        {
-            ll ans = (vec[mid_idx] * 2 * n) - sum + 1;
-            if (ans < 0)
-                cout << -1 << "\n";
-            else
-                cout << ans << "\n";
-        }
+         else if(vec[mid_idx] < half_avg)
+         {
+             cout << 0 << "\n";
+         }
+         else
+         {
+             ll ans = (vec[mid_idx] * 2 * n) - sum + 1;
+             if (ans < 0)
+                 cout << -1 << "\n";
+             else
+                 cout << ans << "\n";
+         }
     }
 
     return 0;
