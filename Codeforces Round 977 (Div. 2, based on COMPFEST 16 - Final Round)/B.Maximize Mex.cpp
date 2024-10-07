@@ -22,6 +22,8 @@ ll mex(vector<ll> &vec, int n)
 
         if(it->first + missing != next(it)->first){
 
+
+
         }
     }
 
