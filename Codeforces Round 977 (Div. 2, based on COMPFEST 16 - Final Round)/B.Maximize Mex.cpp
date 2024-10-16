@@ -1,63 +1,39 @@
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
-ll mex(vector<ll> &vec, int n)
-{
-    map<ll, ll> mpp;
-    for (int i = 0; i < n; i++)
-    {
-        ll k = vec[i];
-        mpp[k]++;
-    }
-    int currentMax = 0;
-    ll missing = 1;
-    
-    for (auto it = mpp.cbegin(); it != mpp.cend(); ++it)
-    {
-        // checked = it->second;
-        if (it->second > currentMax)
-        {
-            currentMax = it->second;
-        }
-
-        if(it->first + missing != next(it)->first){
-
-
-
-        }
-    }
-
-
-        if (currentMax > 1)
-    {
-        auto it = mpp.rbegin();
-        return it->first + 2;
-    }
-    else
-    {
-        cout << "wait" << "\n";
-    }
-}
 
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    ll t;
+    int t;
     cin >> t;
     while (t--)
     {
         ll n, x;
         cin >> n >> x;
         vector<ll> vec(n);
-        for (int i = 0; i < n; i++)
+        for (ll i = 0; i < n; i++)
         {
             cin >> vec[i];
         }
+        unordered_map<ll , ll>freq;
+        for(int i =0 ; i< n ; i++) freq[i] = 0; 
+        for(int i = 0 ; i <n ; i++){
+             freq[vec[i]]++;
+        }
+        ll ans = n;
 
-        ll ans = mex(vec, n);
-        cout << ans << "\n";
+        for(int i = 0 ; i< n  ; i++){
+            if(freq[i] ==0){
+                  ans=i;
+                  break;
+            }
+            freq[i]--;
+            freq[i+x]+=freq[i];
+        }
+        cout<<ans<<"\n";
+       
     }
-
     return 0;
 }
