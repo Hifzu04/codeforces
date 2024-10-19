@@ -35,7 +35,7 @@ int main()
        
         sum += k;
         if(prime){
-            cout<<1<<"testr"<<"\n";
+            cout<<1<<"\n";
         }
         
         else if(sum / maxm > maxm)
