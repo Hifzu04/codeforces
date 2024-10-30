@@ -29,6 +29,7 @@ int main()
                 prime = true;
                 break;
             }
+            ///karo julkdi 
 
         }
 
