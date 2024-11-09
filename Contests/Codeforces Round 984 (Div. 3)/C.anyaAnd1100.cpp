@@ -2,6 +2,17 @@
 #define ll long long
 using namespace std;
 
+bool is1100(int i, const string &s)
+{
+   if (i >= 0 && i + 3 < s.size()){
+    if (s[i] == '1' && s[i + 1] == '1' && s[i + 2] == '0' && s[i + 3] == '0')
+    {
+        return true;
+    }
+    }
+    return false;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -14,26 +25,36 @@ int main()
         cin >> s;
         ll q;
         cin >> q;
-        ll i, v;
-        for (ll j = 0; j < q; j++)
+        ll cnt = 0;
+        for (int i = 0; i < s.size(); i++)
         {
-            cin >> i >> v;
+            if (is1100(i, s))
+                cnt++;
+        }
+        while (q--)
+        {
+            ll i ; ll v;
+            cin>>i>>v;
             i--;
+            if(s[i]!= '0'+ v){
+                bool beforecnt = is1100(i-3 ,s) || is1100(i-2,s) || is1100(i-1,s) || is1100(i,s);
 
-            s[i] = v + '0';
-            string substr = "1100";
-            ll pos = s.find(substr);
+                s[i] = v + '0';
 
-            if (pos != string::npos)
-            {
-                cout << "YES" << "\n";
+                bool aftercnt = is1100(i-3 ,s) || is1100(i-2,s) || is1100(i-1,s) || is1100(i,s);
+
+                cnt += aftercnt - beforecnt;
+                
+
             }
-            else
-            {
-                cout << "NO" << "\n";
-            }
+
+            if(cnt>0) cout<<"YES"<<"\n";
+                else cout<<"NO"<<"\n";
+
+            
+            
+
         }
     }
-
     return 0;
 }
