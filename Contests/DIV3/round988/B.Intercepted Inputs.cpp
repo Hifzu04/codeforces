@@ -9,31 +9,28 @@ int main()
 
     int t;
     cin >> t;
-    while (t--) {
+    while (t--)
+    {
         ll k;
         cin >> k;
-        vector<ll> vec(k);
-        for (ll i = 0; i < k; i++) cin >> vec[i];
-
-        unordered_map<ll, ll> indices; // Map to store element to index mapping
-
-        for (ll i = 0; i < k; i++) {
-          
-
-            ll target = (k - 2) / vec[i];
-
-            // Check if the target exists in the map and is not the current index
-            if (indices.count(target) && indices[target] != i) {
-                cout << vec[i] << " " << target << "\n";
-                
-                break;
-            }
-
-            // Store current element and its index in the map
-            indices[vec[i]] = i;
+        vector<int> vec(k);
+        vector<int> cnt(k + 1);
+        for (int i = 0; i < k; i++)
+        {
+            cin >> vec[i];
+            cnt[vec[i]] += 1;
         }
-
-
+        for (int x = 1; x <= k; x++)
+        {
+            if (cnt[x] > 0 && (k - 2) % x == 0)
+            {
+                if (cnt[(k - 2) / x] > 0)
+                {
+                    cout << x << " " << (k - 2) / x << '\n';
+                    break;
+                }
+            }
+        }
     }
 
     return 0;
