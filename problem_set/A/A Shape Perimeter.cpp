@@ -13,7 +13,7 @@ int main()
     cin >> t;
     while (t--)
 
-    do by urself once again 
+   // do by urself once again 
     {
         int n, m;
         cin >> n >> m;
