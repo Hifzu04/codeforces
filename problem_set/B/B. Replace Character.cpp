@@ -35,7 +35,7 @@ int main() {
             }
         }
 
-// Replace least frequent character with the most frequent one
+        // Replace least frequent character with the most frequent one
  if (least_frequent_char == most_frequent_char) {
         for (ll i = 0; i < n; i++) {
             if (str[i] != least_frequent_char) {

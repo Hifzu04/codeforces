@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"/home/hifzur/work/codeforces/problem_set/A/A. string.cpp","tests":[{"id":1738137069032,"input":"5\n1\n000\n1001\n10101\n01100101011101\n\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hifzur/work/codeforces/problem_set/A/A. string.cpp","group":"local","local":true}
