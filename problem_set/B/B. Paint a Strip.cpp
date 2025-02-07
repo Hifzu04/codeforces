@@ -10,14 +10,14 @@ int main()
     int t; cin>>t; 
     while(t--){    
     int n ; cin>>n;
-    int x =1; 
+   
     int ans =1;
-    int i ;
-    for(i =1 ; i<n ; i=(2*i+2)){
+ 
+    for(int i =1 ; i<n ; i=(2*i+2)){
         ans++;
        
     }
-   //   cout<< i<<" "<<x<<"\n";
+  
 
     cout<<ans<<"\n";
 
