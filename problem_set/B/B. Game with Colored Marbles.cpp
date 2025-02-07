@@ -16,6 +16,7 @@ void solve()
     }
     ll numberofunique = 0;
     ll half = 1;
+    ll k=0;
 
     for (auto it : mpp)
     {
@@ -23,26 +24,12 @@ void solve()
         {
             numberofunique++;
         }
+        else{
+            k++;
+        }
     }
 
-    if (n and 1)
-    {
-        half = n / 2 + 1;
-    }
-    else
-    {
-        half = n / 2;
-    }
-
-
-    if (numberofunique >= half)
-    {
-
-        cout << 2 * half << "\n";
-    }
-    else{
-         cout<<2*numberofunique+(half-numberofunique)<<"\n";
-    }
+   cout<<(numberofunique+1)/2 *2+k<<"\n";\
 }
 int main()
 {
