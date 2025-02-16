@@ -19,7 +19,7 @@ void solve() {
         maxm = max(maxm, a[i]) + 1;
     }
     cout << "Yes\n";
-}
+}   
  
 int main() {
     ios_base::sync_with_stdio(false);
