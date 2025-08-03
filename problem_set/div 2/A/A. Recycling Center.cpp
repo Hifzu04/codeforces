@@ -10,23 +10,23 @@ void solve()
     ll n, c;
     cin >> n >> c;
     vector<ll> vec(n);
-    ll ans = 0;
+    ll free = 0;
     f(i, n)
     {
         cin >> vec[i];
     }
-    f(i, n)
-    {
-        if (vec[i] > c)
-        {
-            ans++;
-        }
-        for (int j = i; j < n; j++)
-        {
-            vec[j] *= 2;
+    ll idx = 0 ;
+    sort(vec.begin() ,vec.end(), greater<ll>());
+    
+    ll j = 0 ; 
+    ll ans = 0;
+    f(i,n){
+        if((vec[i]*(1<<j))<=c){
+             ans++;
+             j++;
         }
     }
-    cout << ans << "\n";
+    cout << n-ans << "\n";
 }
 
 int main()
